@@ -1,0 +1,72 @@
+/* configurações gerais do body */
+body { 
+    background-color: rgb(244, 228, 228); /* cor de fundo */
+    margin: 0; /* remove a margem padrão */
+    padding: 0; /* remove o padding padrão */
+    font-family: Arial, Helvetica, sans-serif; /* define a fonte */
+}
+
+/* estilo do header */
+header {
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+header img {
+    width: 100%;  
+    height: 100vh;
+    object-fit: cover; /* faz a imagem cobrir toda a área sem distorção */
+    margin-top: 0; /* remove a margem superior */
+    padding-top: 0; /* remove o padding superior */
+}
+
+/* estilizando o nav */
+nav { 
+    position: fixed; 
+    top: 0;
+    left: 0; /* garante que o nav se alinhe à esquerda */
+    width: 100%; 
+    z-index: 10; /* coloca o nav acima de outros elementos */
+    background-color: rgba(0, 0, 0, 0.5); /* fundo semi-transparente */
+    padding-top: 10px; /* ajusta o espaçamento superior do nav */
+}
+
+/* lista de navegação */
+nav ul {
+    list-style: none; /* remove os marcadores da lista */
+    margin: 0;
+    padding: 0;
+    display: flex; /* coloca os itens lado a lado */
+    justify-content: center; /* centraliza os itens horizontalmente */
+}
+
+/* itens da lista */
+nav ul li {
+    margin: 0 20px; /* espaçamento entre os itens */
+}
+
+/* estilizando os links */
+nav ul li a {
+    text-decoration: none; /* remove o sublinhado */
+    color: white; /* cor do texto */
+    font-size: 18px; /* tamanho da fonte */
+    font-weight: bold; /* deixa a fonte em negrito */
+    padding: 10px 15px; /* espaçamento interno dos links */
+    display: block; /* faz o link ocupar a área inteira do item */
+    transition: background-color 0.3s ease; /* efeito suave de transição para o hover */
+}
+
+/* efeito hover nos links */
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* cor de fundo ao passar o mouse */
+    border-radius: 5px; /* bordas arredondadas */
+}
+
+.sobre {
+    width: 100%;  
+    height: 100vh;
+    object-fit: cover; /* faz a imagem cobrir toda a área sem distorção */
+    margin-top: 0; /* remove a margem superior */
+    padding-top: 0; /* remove o padding superior */
+}
