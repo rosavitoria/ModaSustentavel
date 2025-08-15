@@ -74,6 +74,10 @@ nav ul li a:hover {
     color: white;
 }
 
+p{
+        color: #d6d6d6;
+}
+
 .text-container h1 {
     font-family: 'Playfair Display', serif;
     font-size: 100px;
@@ -102,7 +106,7 @@ nav ul li a:hover {
 #sobre .text-container {
     background-color: rgba(107, 77, 62, 0.63); /* Fundo branco translúcido */
     padding: 35px;
-    max-width: 600px;
+    max-width: 700px;
     text-align: center;
 }
 
@@ -114,5 +118,5 @@ nav ul li a:hover {
 
 #sobre .text-container p {
     font-size: 18px;
-    color: #c1c1c1;
+    color: #d6d6d6;
 }
