@@ -12,8 +12,6 @@ body {
 
 header {
     position: relative;
-    padding: 0;
-    margin: 0;
 }
 
 nav {
@@ -23,13 +21,11 @@ nav {
     width: 100%;
     z-index: 10;
     background-color: rgba(0, 0, 0, 0.5); 
-    padding-top: 10px; 
+    padding: 10px 0; 
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
     justify-content: center;
 }
@@ -58,7 +54,6 @@ nav ul li a:hover {
     background-image: url('img/home.png');
     background-size: cover;
     background-position: center;
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -67,10 +62,6 @@ nav ul li a:hover {
 .text-container {
     text-align: center;
     color: white;
-}
-
-p{
-        color: #d6d6d6;
 }
 
 .text-container h1 {
@@ -84,6 +75,7 @@ p{
     font-size: 25px;
     font-weight: lighter;
     text-transform: uppercase;
+    color: #d6d6d6;
 }
 
 #sobre {
@@ -94,23 +86,61 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative; 
 }
 
 #sobre .text-container {
-    background-color: rgba(107, 77, 62, 0.63);
+    background-color: rgba(107, 77, 62, 0.7);
     padding: 35px;
     max-width: 700px;
+    border-radius: 10px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif; 
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.section-text {
+    font-size: 22px;
+    color: #d6d6d6;
+    margin-bottom: 30px;
+}
+
+#doacoes {
+    background-color: #ffe4d9;   
+     color: #111;
+    padding: 100px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#doacoes .text-container {
+    max-width: 800px;
     text-align: center;
 }
 
-#sobre .text-container h1 {
-    font-family: 'Playfair Display', serif; 
-    font-size: 100px;
-    font-weight: bold;
+#doacoes h2 {
+    font-size: 50px;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    color: #2a2a2a;
 }
 
-#sobre .text-container p {
-    font-size: 25px;
+#doacoes p {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+
+footer {
+    background-color: #111;
     color: #d6d6d6;
+    text-align: center;
+    padding: 20px 0;
 }
