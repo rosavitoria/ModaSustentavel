@@ -71,7 +71,7 @@
 
  .text-container h1 {
      font-family: 'Playfair Display', serif;
-     font-size: 120px;
+     font-size: 150px;
      font-weight: 800;
      text-transform: uppercase;
      letter-spacing: 5px;
@@ -189,6 +189,7 @@
 /* Ícones e links */
 #contato i {
     text-decoration: inherit;
+    text-decoration: none;
     color: #f4c2a1;
     font-size: 22px;
     margin-right: 10px;
@@ -210,16 +211,18 @@
 #contato .site a { color: #f5c08a; }
 #contato .site a:hover { color: #ffd7a8; }
 
+/* Links gerais dentro da seção contato */
 #contato a {
-    text-decoration: none;
+    text-decoration: none; 
     font-weight: 600;
-    text-decoration: none;
+    color: inherit;            
     transition: color 0.2s;
 }
 
 #contato a:hover i {
     transform: scale(1.2);
 }
+
 
 
 
