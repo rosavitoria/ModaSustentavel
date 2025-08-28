@@ -2,129 +2,157 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customiza - Moda Sustentável</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customiza - Moda Sustentável</title>
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <!-- Estilos e Ícones -->
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-    <header id="inicio">
-        <nav>
-            <ul>
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#doacoes">Doações</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <section class="home">
-        <div class="text-container">
-            <h1>CUSTOMIZA</h1>
-            <p>Moda Sustentável</p>
+  <!-- NAVBAR -->
+  <header>
+    <nav class="navbar">
+      <a href="#" class="logo">Customiza</a>
+      <ul class="menu">
+        <li><a href="#">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#doacoes">Doações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+      <div class="login-area">
+        <a href="#" class="btn-login">Login</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="home">
+    <div class="overlay"></div>
+    <div class="text-container">
+      <h1>CUSTOMIZA</h1>
+      <p class="slogan">Moda Sustentável & Upcycling Criativo</p>
+      <a href="#servicos" class="btn-cta">Conheça nossos serviços</a>
+    </div>
+  </section>
+
+  <!-- SOBRE -->
+  <section id="sobre" class="sobre">
+    <div class="container">
+      <h2>Sobre Nós</h2>
+      <p>Transformamos roupas antigas em novas histórias, incentivando moda circular e consciente.</p>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <h2>Nossos Serviços</h2>
+      <div class="servicos-grid">
+        <div class="servico-card">
+          <i class="fas fa-recycle"></i>
+          <h3>Transformação</h3>
+          <p>Transforme roupas velhas em peças únicas.</p>
         </div>
-    </section>
+        <div class="servico-card">
+          <i class="fas fa-paint-brush"></i>
+          <h3>Detalhes</h3>
+          <p>Bordados, patches e estampas exclusivas.</p>
+        </div>
+        <div class="servico-card">
+          <i class="fas fa-cut"></i>
+          <h3>Ajustes</h3>
+          <p>Ajustes e reparos personalizados.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <main>
-        <section id="sobre">
-            <div class="text-container">
-                <h2 class="section-title">Sobre Nós</h2>
-                <p class="section-text">Somos uma marca dedicada à customização e ao upcycling de roupas, promovendo a
-                    moda sustentável e incentivando o consumo consciente.</p>
+  <section id="produtos" class="produtos-carrossel">
+    <div class="container">
+      <h2 class="section-title">Produtos Customizados</h2>
+      <div class="carrossel-container">
+        <button class="carrossel-btn prev"><i class="fas fa-chevron-left"></i></button>
+        <div class="produtos-wrapper" id="produtosWrapper">
+          <div class="produtos-grid">
+            <div class="produto-card">
+              <img src="img/saia.png" alt="Saia Customizada">
+              <h3>Saia Customizada</h3>
             </div>
-        </section>
+            <div class="produto-card">
+              <img src="img/shortjeansescuro.png" alt="Shorts Jeans">
+              <h3>Shorts Jeans</h3>
+            </div>
+            <div class="produto-card">
+              <img src="img/blusa-removebg-preview.png" alt="Camiseta Pintada">
+              <h3>Camiseta Pintada</h3>
+            </div>
+          </div>
+        </div>
+        <button class="carrossel-btn next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- DOAÇÕES -->
+  <section id="doacoes" class="doacoes">
+    <div class="container">
+      <div class="doacoes-grid">
+        <div class="doacao-info">
+          <h2>Por que doar roupas?</h2>
+          <p>Reduza o impacto da moda e dê nova vida às peças.</p>
+        </div>
+        <div class="doacao-info">
+          <h2>Como doar?</h2>
+          <p>Separe roupas em bom estado e entre em contato conosco.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <section id="contato">
-            <div class="text-container">
-                <h2 class="section-title">Entre em Contato</h2>
-                <p>
-                    Ficaremos felizes em atender você!
-                    Para dúvidas, sugestões ou pedidos, entre em contato pelos nossos canais:
-                </p>
-                <p>
-                    <i class="fa-solid fa-envelope"></i>
-                    <a href="mailto:customizadoa@outlook.com"><strong>customiza@outlook.com</strong></a><br>
+  <!-- CONTATO -->
+  <section id="contato" class="contato">
+    <div class="container">
+      <h2>Entre em Contato</h2>
+      <p><i class="fas fa-envelope"></i> customiza@outlook.com</p>
+      <div class="redes-sociais">
+        <a href="#" class="social-link"><i class="fab fa-instagram"></i> @customiza</a>
+      </div>
+    </div>
+  </section>
 
-                    <i class="fa-brands fa-instagram"></i>
-                    <a href="https://instagram.com/customiza" target="_blank"><strong>customiza</strong></a>
-                </p>
+  <!-- MODAL LOGIN -->
+  <div class="modal-login" id="login">
+    <div class="modal-conteudo">
+      <span class="fechar-modal">&times;</span>
+      <h2>Login</h2>
+      <form action="/login" method="POST">
+        <input type="text" name="username" placeholder="Usuário" required>
+        <input type="password" name="password" placeholder="Senha" required>
+        <button type="submit" class="btn-login">Entrar</button>
+      </form>
+      <p>Ainda não tem conta? <a href="/register">Cadastre-se</a></p>
+    </div>
+  </div>
 
-                <section id="doacoes">
-                    <div class="text-container">
-                        <h2>Por que doar roupas?</h2>
-                        <p>Todos os anos, mais de 6 milhões de toneladas de lixo acabam nos oceanos, prejudicando
-                            ecossistemas e
-                            aumentando a poluição global. A indústria têxtil é a segunda mais poluidora, consumindo
-                            recursos e
-                            gerando resíduos. Ao reutilizar roupas, reduzimos a produção de novas peças e
-                            contribuímos para um planeta mais limpo.</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rosa Vitória - Customiza. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-                        <h2>Como doar?</h2>
-                        <p>Separe roupas em bom estado que não utiliza mais e entre em contato conosco.
-                            Juntos, podemos dar um novo propósito a cada peça!</p>
-                    </div>
-                </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Rosa Vitória - 3° DS. Todos os direitos reservados.
-        </p>
-    </footer>
 </body>
 
 </html>
-
-
-
-<!-- 1. Plataforma de Customização e Upcycling de Roupas:
-Objetivo da Plataforma:
-
-A ideia é criar um mercado digital para a customização e upcycling de roupas, permitindo que os usuários transformem suas roupas antigas em peças exclusivas, sem a necessidade de comprar roupas novas. Essa plataforma proporciona uma experiência pessoal e criativa para quem deseja dar uma nova vida aos seus itens, promovendo a moda circular e a sustentabilidade.
-
-Como Funciona:
-
-Envio da Roupas:
-O usuário começa acessando a plataforma, onde ele pode enviar suas roupas através de um formulário simples, inserindo detalhes sobre a peça (como tamanho, tipo de roupa, tecido e estado atual). O sistema pode até permitir o envio de fotos para facilitar a descrição da peça.
-
-Escolha da Customização:
-Após o envio da peça, o usuário escolhe o tipo de customização ou upcycling desejado. Aqui estão algumas opções:
-
-Transformação Completa: Como transformar uma calça velha em uma saia, ou uma camiseta em uma bolsa.
-
-Adição de Detalhes: Adicionar patches, bordados, tintura ou estampas exclusivas.
-
-Ajustes e Reparos: Fazer ajustes para melhorar o caimento (ex: diminuir ou aumentar o comprimento, adicionar detalhes como franjas ou rendas).
-
-Roupas de Estilo Personalizado: O usuário pode optar por criar um design completamente novo, baseado nas peças enviadas.
-
-Consultoria Criativa:
-Para ajudar o cliente a tomar decisões, a plataforma pode oferecer consultoria de designers. O cliente pode enviar uma descrição e o designer, com base em seu estilo e preferências, sugerir ideias e opções de customização. Isso poderia ser feito por chat, e-mail ou até videochamadas, permitindo um toque mais pessoal.
-
-Criação e Customização:
-Após o cliente aprovar o design ou a ideia proposta, a peça será enviada para um designer ou estilista especializado. Eles irão transformar a peça de acordo com as especificações do cliente.
-
-Recebimento da Peça Customizada:
-O usuário recebe a peça transformada em sua casa, pronta para ser usada novamente. O processo de customização também pode incluir embalagens sustentáveis, para reforçar o compromisso com o meio ambiente.
-
-Funcionalidades Adicionais:
-
-Loja de Designers: A plataforma pode contar com um marketplace onde designers especializados em upcycling e customização oferecem seus serviços para outros usuários. Esses designers podem exibir seus portfólios, e os usuários podem escolher o que melhor se adapta ao seu estilo.
-
-Comunidade Criativa: A plataforma pode ter uma área de blog ou fórum onde os usuários compartilham seus projetos de upcycling, trocam ideias, postam antes e depois das peças customizadas e discutem tendências de moda sustentável.
-
-Desafios e Concursos: Para incentivar a participação ativa, a plataforma pode lançar desafios mensais de customização. Por exemplo, um concurso de customização de camisetas onde os usuários enviam suas criações, e o vencedor recebe prêmios, como créditos na plataforma ou produtos sustentáveis.
-
-Por que é Sustentável?
-
-Reduz o desperdício: Ao dar uma nova vida às roupas existentes, evita-se que muitas delas sejam descartadas em aterros sanitários, onde demoram anos para se decompor.
-
-Redução da necessidade de novas produções: Não há necessidade de fabricar novas peças, o que reduz o consumo de recursos naturais e a emissão de gases de efeito estufa na cadeia de produção.
-
-Apoio a práticas éticas: A plataforma pode promover o uso de materiais reciclados, orgânicos ou de baixo impacto ambiental, além de apoiar pequenos designers e empresas locais.
-
-Moderno e Personalizado: O upcycling também cria uma moda mais personalizada e única, com menos impacto ambiental, além de ser uma maneira de cultivar um estilo próprio. -->

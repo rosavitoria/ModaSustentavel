@@ -1,269 +1,483 @@
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
- body {
-     font-family: 'Arial', 'Helvetica', sans-serif;
-     line-height: 1.6;
-     color: #333;
-     background-color: #fafafa;
- }
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #fafafa;
+  scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+header {
+  position: relative;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 14px 30px;
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s, padding 0.3s;
+}
+
+nav.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 10px 30px;
+}
+
+nav .logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #f5c08a;
+  letter-spacing: 1.5px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* HERO */
+.home {
+  height: 100vh;
+  position: relative;
+  background: url('img/home.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.home .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.home .text-container {
+  position: relative;
+  color: #fff;
+  padding: 20px;
+  animation: fadeIn 1.5s ease;
+}
+
+.home h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;
+  font-weight: 800;
+  letter-spacing: 6px;
+}
+
+.home p {
+  font-size: 24px;
+  margin: 20px 0;
+  color: #e0e0e0;
+}
+
+.btn-cta {
+  background: #f5c08a;
+  color: #111;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-cta:hover {
+  background: #ffd7a8;
+  transform: translateY(-3px);
+}
+
+/* SEÇÕES */
+section {
+  padding: 100px 30px;
+}
+
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #3a2415;
+}
+
+/* SOBRE */
+.sobre {
+  background: url('img/sobre2.png') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sobre .container {
+  background: rgba(107, 77, 62, 0.85);
+  padding: 40px;
+  max-width: 700px;
+  border-radius: 14px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.sobre p {
+  font-size: 20px;
+  line-height: 1.8;
+}
+
+/* SERVIÇOS */
+.servicos {
+  background: #fdf8f4;
+}
+
+.servicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.servico-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.servico-card i {
+  color: #f5c08a;
+  margin-bottom: 10px;
+}
+
+.servico-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.servico-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.2);
+}
+
+.produtos-carrossel {
+  padding: 80px 20px;
+  background-color: #fdf8f4;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 42px;
+  margin-bottom: 40px;
+  color: #3a2415;
+}
+
+.carrossel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.produtos-wrapper {
+  overflow: hidden;
+  flex: 1;
+}
+
+.produtos-grid {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.produto-card {
+  min-width: 280px;
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  flex-shrink: 0;
+  animation: fadeInUp 0.6s ease;
+}
+.produto-card img {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.produto-card h3 {
+  font-size: 18px;
+  color: #333;
+}
+.produto-card:hover {
+  transform: translateY(-5px);
+}
+
+.carrossel-btn {
+  background: #f5c08a;
+  border: none;
+  color: #111;
+  font-size: 20px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: background 0.3s ease;
+}
+.carrossel-btn:hover {
+  background: #ffd7a8;
+}
+
+/* Animação */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .produtos-grid {
+    gap: 20px;
+  }
+  .produto-card {
+    min-width: 220px;
+  }
+  .section-title {
+    font-size: 32px;
+  }
+}
+@media (max-width: 480px) {
+  .carrossel-container {
+    flex-direction: column;
+  }
+  .carrossel-btn {
+    margin: 10px 0;
+  }
+}
 
 
- /* nav */
- header {
-     position: relative;
- }
+/* DOAÇÕES */
+.doacoes {
+  background: linear-gradient(135deg, #f5e6d3, #e2c9aa);
+  text-align: center;
+}
 
- nav {
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     z-index: 10;
-     background-color: rgba(0, 0, 0, 0.7);
-     padding: 12px 0;
-     backdrop-filter: blur(6px);
- }
+.doacoes .container {
+  max-width: 800px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 50px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
 
- nav ul {
-     list-style: none;
-     display: flex;
-     justify-content: center;
-     flex-wrap: wrap;
- }
+/* CONTATO */
+.contato {
+  background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.85)), url('img/background.png') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- nav ul li {
-     margin: 0 18px;
- }
+.contato .container {
+  background: rgba(20, 20, 20, 0.7);
+  padding: 50px;
+  border-radius: 16px;
+  color: #fff;
+  max-width: 600px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+}
 
- nav ul li a {
-     text-decoration: none;
-     color: white;
-     font-size: 18px;
-     font-weight: 600;
-     padding: 8px 14px;
-     border-radius: 6px;
-     transition: all 0.3s ease;
- }
+.contato p {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
 
- nav ul li a:hover {
-     background-color: rgba(255, 255, 255, 0.2);
- }
+/* MODAL LOGIN */
+.modal-login {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 200;
+}
 
+.modal-conteudo {
+  background: #fff;
+  padding: 40px;
+  border-radius: 14px;
+  width: 350px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: scaleUp 0.3s ease;
+}
 
- /* home */
- .home {
-     height: 100vh;
-     background: url('img/home.png') no-repeat center/cover;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     text-align: center;
- }
+.modal-conteudo input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
 
- .text-container {
-     color: white;
-     padding: 20px;
- }
+.modal-conteudo button {
+  background: #f5c08a;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
- .text-container h1 {
-     font-family: 'Playfair Display', serif;
-     font-size: 150px;
-     font-weight: 800;
-     text-transform: uppercase;
-     letter-spacing: 5px;
- }
+.modal-conteudo button:hover {
+  background: #ffd7a8;
+}
 
- .text-container p {
-     font-size: 26px;
-     font-weight: 300;
-     text-transform: uppercase;
-     color: #e0e0e0;
- }
+.fechar-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 26px;
+  cursor: pointer;
+  color: #555;
+}
 
+/* FOOTER */
+footer {
+  background: #111;
+  color: #d6d6d6;
+  text-align: center;
+  padding: 25px;
+  font-size: 15px;
+}
 
- /* sobre */
- #sobre {
-     min-height: 100vh;
-     background: url('img/sobre2.png') no-repeat center/cover;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     padding: 60px 20px;
- }
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 
- #sobre .text-container {
-     background: rgba(107, 77, 62, 0.85);
-     padding: 40px;
-     max-width: 700px;
-     border-radius: 12px;
-     color: #fff;
-     text-align: center;
- }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
- .section-title {
-     font-family: 'Playfair Display', serif;
-     font-size: 54px;
-     font-weight: 700;
-     margin-bottom: 18px;
- }
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
 
- .section-text {
-     font-size: 20px;
-     color: #f0f0f0;
-     margin-bottom: 30px;
-     line-height: 1.8;
- }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
 
+/* RESPONSIVIDADE */
+@media (max-width:768px) {
+  .home h1 {
+    font-size: 72px;
+  }
 
-/* ---------- SEÇÃO DOAÇÕES ---------- */
-#doacoes {
-    background: linear-gradient(135deg, #f5e6d3, #e2c9aa); /* degradê mais vivo */
-    color: #2a2a2a;
-    padding: 100px 30px;
+  .section-title {
+    font-size: 36px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+  }
+
+  nav ul.show {
     display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .produtos-carrossel {
+    padding: 0 10px;
+  }
+
+  .produtos-grid {
+    gap: 15px;
+  }
 }
 
-#doacoes .text-container {
-    max-width: 900px;
-    text-align: center;
-    background: #ffffffd9; /* branco quase sólido para boa leitura */
-    padding: 50px;
-    border-radius: 14px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-}
+@media (max-width:480px) {
+  .home h1 {
+    font-size: 52px;
+  }
 
-#doacoes h2 {
-    font-size: 42px;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 20px;
-    color: #3a2415; /* marrom mais forte */
-}
-
-#doacoes p {
-    font-size: 20px;
-    line-height: 1.8;
-    margin-bottom: 22px;
-    color: #333; /* mais legível */
-}
-
-/* ---------- SEÇÃO CONTATO ---------- */
-#contato {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.8)), url('img/background.png') no-repeat center/cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 60px 20px;
-    text-align: center;
-}
-
-#contato .text-container {
-    background: rgba(20, 20, 20, 0.6); /* mais escuro para dar contraste */
-    padding: 50px;
-    border-radius: 16px;
-    color: #fff;
-    max-width: 650px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-}
-
-#contato h2 {
-    font-size: 46px;
-    font-family: 'Playfair Display', serif;
-    margin-bottom: 25px;
-    color: #f5c08a; /* tom dourado suave */
-}
-
-#contato p {
+  .home p {
     font-size: 18px;
-    margin-bottom: 18px;
-    color: #eaeaea; /* texto claro e legível */
+  }
+
+  .servico-card h3 {
+    font-size: 18px;
+  }
+
+  .produtos-grid {
+    gap: 10px;
+  }
 }
-
-/* Ícones e links */
-#contato i {
-    text-decoration: inherit;
-    text-decoration: none;
-    color: #f4c2a1;
-    font-size: 22px;
-    margin-right: 10px;
-    transition: transform 0.2s, color 0.2s;
-}
-
-/* E-mail - deixado bege/dourado igual ao site */
-#contato .email i, 
-#contato .email a { color: #f5c08a; }
-#contato .email a:hover { color: #ffd7a8; }
-
-/* Instagram */
-#contato .instagram i, 
-#contato .instagram a { color: #e1306c; }
-#contato .instagram a:hover { color: #ff5fa2; }
-
-/* Site */
-#contato .site i, 
-#contato .site a { color: #f5c08a; }
-#contato .site a:hover { color: #ffd7a8; }
-
-/* Links gerais dentro da seção contato */
-#contato a {
-    text-decoration: none; 
-    font-weight: 600;
-    color: inherit;            
-    transition: color 0.2s;
-}
-
-#contato a:hover i {
-    transform: scale(1.2);
-}
-
-
-
-
-
- /* footer */
- footer {
-     background-color: #111;
-     color: #d6d6d6;
-     text-align: center;
-     padding: 25px 15px;
-     font-size: 15px;
- }
-
-
- /* responsividade */
- @media (max-width: 992px) {
-     .text-container h1 {
-         font-size: 80px;
-     }
-
-     .section-title {
-         font-size: 42px;
-     }
- }
-
- @media (max-width: 600px) {
-     nav ul {
-         flex-direction: column;
-         gap: 12px;
-     }
-
-     .text-container h1 {
-         font-size: 56px;
-     }
-
-     .text-container p {
-         font-size: 18px;
-     }
-
-     #contato .text-container,
-     #sobre .text-container {
-         padding: 25px;
-     }
- }

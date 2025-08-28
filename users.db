@@ -1,0 +1,62 @@
+from flask import Flask, render_template, request, redirect, session
+import sqlite3
+
+app = Flask(__name__)
+app.secret_key = "segredo123"
+
+# Função para conectar ao banco
+def get_db_connection():
+    conn = sqlite3.connect("users.db")
+    conn.row_factory = sqlite3.Row
+    return conn
+
+# Página inicial
+@app.route("/")
+def home():
+    user = session.get("user")  # verifica se usuário está logado
+    return render_template("index.html", user=user)
+
+# Login
+@app.route("/login", methods=["POST"])
+def login():
+    username = request.form["username"]
+    password = request.form["password"]
+
+    conn = get_db_connection()
+    user = conn.execute("SELECT * FROM users WHERE username=? AND password=?", (username, password)).fetchone()
+    conn.close()
+
+    if user:
+        session["user"] = user["username"]
+        return redirect("/")
+    else:
+        return "Usuário ou senha incorretos"
+
+# Logout
+@app.route("/logout")
+def logout():
+    session.pop("user", None)
+    return redirect("/")
+
+# Registro
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    if request.method == "POST":
+        username = request.form["username"]
+        password = request.form["password"]
+
+        conn = get_db_connection()
+        try:
+            conn.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
+            conn.commit()
+            session["user"] = username
+            return redirect("/")
+        except sqlite3.IntegrityError:
+            return "Usuário já existe"
+        finally:
+            conn.close()
+
+    return render_template("register.html")
+
+if __name__ == "__main__":
+    app.run(debug=True)

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customiza - Cadastro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+  <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">Customiza</a>
+      <ul class="menu">
+        <li><a href="/">Início</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#produtos">Produtos</a></li>
+        <li><a href="#doacoes">Doações</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="cadastro">
+      <div class="container">
+        <h2>Crie sua Conta</h2>
+        <form action="/register" method="POST" class="form-cadastro">
+          <input type="text" name="username" placeholder="Usuário" required>
+          <input type="password" name="password" placeholder="Senha" required>
+          <button type="submit" class="btn-cta">Cadastrar</button>
+        </form>
+        <p>Já tem uma conta? <a href="/">Faça login</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Rosa Vitória - Customiza. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+</body>
+</html>
