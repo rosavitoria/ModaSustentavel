@@ -1,107 +1,72 @@
-// ===== MODAL LOGIN =====
 document.addEventListener("DOMContentLoaded", () => {
+  // ===== MODAL LOGIN =====
   const modal = document.getElementById("login");
   const btnLogin = document.querySelectorAll(".btn-login");
   const closeBtn = document.querySelector(".fechar-modal");
+  const formLogin = document.getElementById("form-login");
+  const mensagem = document.getElementById("mensagem-login");
 
-  if (modal && btnLogin.length && closeBtn) {
+  function abrirModal() {
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
+
+  function fecharModal() {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+    if (mensagem) mensagem.style.display = "none";
+  }
+
+  if (modal && closeBtn) {
     btnLogin.forEach(btn => {
       btn.addEventListener("click", e => {
+        if (btn.tagName === "BUTTON" && btn.type === "submit") return;
         e.preventDefault();
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // bloqueia scroll
+        abrirModal();
       });
     });
 
-    closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
-      document.body.style.overflow = "auto";
-    });
-
+    closeBtn.addEventListener("click", fecharModal);
     window.addEventListener("click", e => {
-      if (e.target === modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-      }
+      if (e.target === modal) fecharModal();
     });
   }
-});
 
-// ===== NAVBAR SCROLL =====
-window.addEventListener("scroll", () => {
+  if (formLogin && mensagem) {
+    formLogin.addEventListener("submit", e => {
+      e.preventDefault();
+      const { username, password } = formLogin;
+      const user = username.value.trim();
+      const pass = password.value.trim();
+
+      if (user === "admin" && pass === "123") {
+        mensagem.textContent = "✅ Login realizado com sucesso!";
+        mensagem.className = "mensagem sucesso";
+        setTimeout(() => formLogin.submit(), 1500);
+      } else {
+        mensagem.textContent = "❌ Usuário ou senha incorretos.";
+        mensagem.className = "mensagem erro";
+      }
+      mensagem.style.display = "block";
+    });
+  }
+
+  // ===== NAVBAR SCROLL =====
   const nav = document.querySelector("nav");
   if (nav) {
-    nav.classList.toggle("scrolled", window.scrollY > 50);
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 50);
+    });
   }
-});
 
-// ===== HAMBURGER MENU MOBILE =====
-document.addEventListener("DOMContentLoaded", () => {
+  // ===== HAMBURGER MENU =====
   const hamburger = document.querySelector(".hamburger");
   const menu = document.querySelector("nav ul.menu");
-
   if (hamburger && menu) {
-    hamburger.addEventListener("click", () => {
-      menu.classList.toggle("show");
-    });
-  }
-});
-
-// ===== PRODUTOS CARROSSEL =====
-document.addEventListener("DOMContentLoaded", () => {
-  const produtosGrid = document.querySelector(".produtos-grid");
-  const prevBtn = document.querySelector(".carrossel-btn.prev");
-  const nextBtn = document.querySelector(".carrossel-btn.next");
-  const produtoCards = document.querySelectorAll(".produto-card");
-
-  let index = 0;
-  let itemsToShow = 3;
-
-  function updateItemsToShow() {
-    if (window.innerWidth <= 480) itemsToShow = 1;
-    else if (window.innerWidth <= 768) itemsToShow = 2;
-    else itemsToShow = 3;
+    hamburger.addEventListener("click", () => menu.classList.toggle("show"));
   }
 
-  function showSlide(i) {
-    const totalItems = produtoCards.length;
-    if (totalItems <= itemsToShow) return;
-
-    if (i < 0) index = totalItems - itemsToShow;
-    else if (i > totalItems - itemsToShow) index = 0;
-    else index = i;
-
-    const offset = -(index * (100 / itemsToShow));
-    produtosGrid.style.transform = `translateX(${offset}%)`;
-  }
-
-  function initCarrossel() {
-    updateItemsToShow();
-    showSlide(index);
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => showSlide(index - 1));
-    }
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => showSlide(index + 1));
-    }
-
-    window.addEventListener("resize", () => {
-      updateItemsToShow();
-      showSlide(index);
-    });
-
-    setInterval(() => {
-      showSlide(index + 1);
-    }, 5000);
-  }
-
-  if (produtosGrid && produtoCards.length) {
-    initCarrossel();
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
+  // ===== PRODUTOS CARROSSEL =====
   const grid = document.querySelector(".produtos-grid");
   const cards = document.querySelectorAll(".produto-card");
   const prevBtn = document.querySelector(".carrossel-btn.prev");
@@ -113,44 +78,43 @@ document.addEventListener("DOMContentLoaded", () => {
   let interval;
 
   function updateItemsToShow() {
-    if (window.innerWidth <= 480) itemsToShow = 1;
-    else if (window.innerWidth <= 768) itemsToShow = 2;
-    else itemsToShow = 3;
+    itemsToShow =
+      window.innerWidth <= 480 ? 1 :
+      window.innerWidth <= 768 ? 2 : 3;
   }
 
   function showSlide(i) {
     const totalItems = cards.length;
     if (totalItems <= itemsToShow) return;
 
-    if (i < 0) index = totalItems - itemsToShow;
-    else if (i > totalItems - itemsToShow) index = 0;
-    else index = i;
+    index = i < 0 ? totalItems - itemsToShow :
+            i > totalItems - itemsToShow ? 0 : i;
 
     const offset = -(index * (100 / itemsToShow));
     grid.style.transform = `translateX(${offset}%)`;
   }
 
   function startAutoScroll() {
-    interval = setInterval(() => {
-      showSlide(index + 1);
-    }, 5000);
+    interval = setInterval(() => showSlide(index + 1), 5000);
   }
 
   function stopAutoScroll() {
     clearInterval(interval);
   }
 
-  updateItemsToShow();
-  showSlide(index);
-  startAutoScroll();
-
-  prevBtn.addEventListener("click", () => showSlide(index - 1));
-  nextBtn.addEventListener("click", () => showSlide(index + 1));
-  window.addEventListener("resize", () => {
+  if (grid && cards.length) {
     updateItemsToShow();
     showSlide(index);
-  });
+    startAutoScroll();
 
-  wrapper.addEventListener("mouseenter", stopAutoScroll);
-  wrapper.addEventListener("mouseleave", startAutoScroll);
+    prevBtn?.addEventListener("click", () => showSlide(index - 1));
+    nextBtn?.addEventListener("click", () => showSlide(index + 1));
+    window.addEventListener("resize", () => {
+      updateItemsToShow();
+      showSlide(index);
+    });
+
+    wrapper?.addEventListener("mouseenter", stopAutoScroll);
+    wrapper?.addEventListener("mouseleave", startAutoScroll);
+  }
 });

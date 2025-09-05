@@ -27,6 +27,30 @@
     <p>Já tem uma conta? <a href="index.html">Faça login</a></p>
       </div>
     </section>
+     
+<!-- Botão em qualquer lugar da página para abrir modal -->
+<button class="btn-abrir-login">Login</button>
+
+<!-- MODAL LOGIN -->
+<div class="modal-login" id="login">
+  <div class="modal-conteudo">
+    <span class="fechar-modal">&times;</span>
+    <h2 id="ainda">Login</h2>
+    <form id="form-login" action="/login" method="POST">
+      <input type="text" name="username" placeholder="Usuário" required>
+      <input type="password" name="password" placeholder="Senha" required>
+      <button type="submit">Entrar</button>
+    </form>
+
+    <!-- Mensagem de alerta -->
+    <p id="mensagem-login" class="mensagem"></p>
+
+    <p>Ainda não tem conta? 
+      <a href="register.html" target="_blank" rel="noopener noreferrer">Cadastre-se</a>
+    </p>
+  </div>
+</div>
+
   </main>
 
   <footer>
