@@ -70,7 +70,6 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
-/* CADASTRO */
 .cadastro {
   min-height: 100vh;
   display: flex;
@@ -177,6 +176,17 @@ nav ul li a:hover {
   background: #f8d7da;
   color: #721c24;
   border: 1px solid #f5c6cb;
+}
+
+#servicoo{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+}
+
+.produtos-carrossel{
+text-align: center;
 }
 
 footer {
